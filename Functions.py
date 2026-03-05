@@ -89,6 +89,22 @@ def Get_Local_Weather():
 
     return Get_Weather(place)
 
-def Choose_Options():
+defaultList = ["option1", "option2", "option3"]
+
+def Choose_Options(optionsList):
+    if optionsList == None:
+        optionsList = defaultList
+
     #see local weather
-    print("a")
+    for i, option in enumerate(optionsList):
+        print(f"[{i + 1}] - {option}")
+    
+    choice = None
+
+    while choice == None:
+        try:
+            choice = int(input("Choice: "))
+        except:
+            choice = None
+    
+    return choice

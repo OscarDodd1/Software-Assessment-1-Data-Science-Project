@@ -1,7 +1,7 @@
-#!!!!! IMPORTANT: Use | python -m pip install -r requirements.txt | to install all dependancies
+#!!!!! IMPORTANT: Use | pip install -r requirements.txt | to install all dependancies
 
 import time
-from Functions import Set_Info, Get_Weather, Get_Local_Weather, Display_Weather #Get functions
+from Functions import Set_Info, Get_Weather, Get_Local_Weather, Display_Weather, Choose_Options #Get functions
 
 #Api key cc57d655a5444de890d222902262602
 
