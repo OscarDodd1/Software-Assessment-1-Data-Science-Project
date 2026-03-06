@@ -32,9 +32,10 @@ def Display_Weather(weather_data):
         country = weather_data["location"]["country"]  # Country
         temperature = weather_data["current"]["temp_c"]  # Temperature in Celsius
         condition = weather_data["current"]["condition"]["text"]  # Weather condition (e.g., Sunny, Rainy)
+        last_updated = weather_data["current"]["last_updated"]
 
         # Print the weather details
-        print(f"-----Weather in {location}, {country}-----")
+        print(f"-----Weather in {location}, {country} as of {last_updated}-----")
         print(f"Temperature: {temperature}°C")
         print(f"Condition: {condition}")
     else:

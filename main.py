@@ -7,9 +7,10 @@ from Functions import Set_Info, Get_Weather, Get_Local_Weather, Display_Weather,
 
 #Base url http://api.weatherapi.com/v1
 
+#Set info
 Set_Info()
 
 #Main Loop
 while True:
     Display_Weather(Get_Local_Weather())
-    time.sleep(10)
+    time.sleep(1)
