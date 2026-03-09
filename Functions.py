@@ -4,6 +4,8 @@ import geocoder
 
 data = {}
 
+defaultList = ["Get Weather From Place", "Get Local Weather", "Other..."]
+
 def Set_Info():
     with open("data.json", "r") as fp:
         data = json.load(fp)
@@ -23,6 +25,8 @@ def Set_Info():
     # Write the dictionary to a JSON file
     with open("data.json", "w") as fp:
         json.dump(data, fp)
+
+    return
 
 def Display_Weather(weather_data):
     if weather_data:
@@ -90,15 +94,40 @@ def Get_Local_Weather():
 
     return Get_Weather(place)
 
-defaultList = ["option1", "option2", "option3"]
-
 def Choose_Options(optionsList):
+    # Most of this code makes the options list look nice
+    characterLength = 35
+
     if optionsList == None:
         optionsList = defaultList
 
-    #see local weather
+    lineString = ""
+
+    for i in range(characterLength):
+        lineString += "-"
+
+    print(f"\n{lineString}")
+
     for i, option in enumerate(optionsList):
-        print(f"[{i + 1}] - {option}")
+        changed = False
+
+        fullString = f"| [{i + 1}] - {option}"
+
+        if len(fullString) > (characterLength - 4):
+            changed = True
+            fullString = fullString[:characterLength - 4 -len(fullString)]
+
+        if changed:
+            fullString += "..."
+
+        for i in range(characterLength - 1 - len(fullString)):
+            fullString += " "
+
+        fullString += "|"
+
+        print(fullString)
+
+    print(f"{lineString}\n")
     
     choice = None
 
