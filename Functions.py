@@ -2,7 +2,7 @@ import requests #Get requests
 import json
 import geocoder
 
-data = {}
+data = {"BASE_URL": "", "API_KEY": ""}
 
 defaultList = ["Get Weather From Place", "Get Local Weather", "Other..."]
 
@@ -27,6 +27,18 @@ def Set_Info():
         json.dump(data, fp)
 
     return
+
+def Clear_Info():
+    data = {"BASE_URL": "", "API_KEY": ""}
+
+    with open("data.json", "w") as fp:
+        json.dump(data, fp)
+
+    print("Cleared data")
+
+    print("\nSet new data")
+
+    Set_Info()
 
 def Display_Weather(weather_data):
     if weather_data:

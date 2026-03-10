@@ -1,7 +1,8 @@
 #!!!!! IMPORTANT: Use | pip install -r requirements.txt | to install all dependancies
 
+import sys
 import time
-from Functions import Set_Info, Get_Weather, Get_Local_Weather, Display_Weather, Choose_Options, Get_local_IP #Get functions
+from Functions import Set_Info, Clear_Info, Get_Weather, Get_Local_Weather, Display_Weather, Choose_Options, Get_local_IP #Get functions
 
 #Api key cc57d655a5444de890d222902262602
 
@@ -19,15 +20,20 @@ while True:
     elif option == 2:
         Display_Weather(Get_Local_Weather())
     elif option == 3:
-        option2 = Choose_Options({"Set Info", "Get IP"})
+        option2 = Choose_Options(["Set Info", "Clear Info", "Get IP", "Exit Program"])
         if option2 == 1:
             Set_Info()
         elif option2 == 2:
+            Clear_Info()
+        elif option2 == 3:
             ip = Get_local_IP()
 
             if not ip:
                 print("IP not found")
             else:
                 print(ip)
+        elif option2 == 4:
+            print("\n---Exiting program---")
+            sys.exit()
 
     time.sleep(1)
