@@ -14,6 +14,9 @@ Set_Info()
 #Main Loop
 while True:
     option = Choose_Options(None)
+
+    print("") #Go to another line
+
     if option == 1:
         place = input("Place to get weather from: ")
         Display_Weather(Get_Weather(place))

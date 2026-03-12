@@ -1,14 +1,41 @@
 import requests #Get requests
 import json
 import geocoder
+from datetime import datetime
 
-data = {"BASE_URL": "", "API_KEY": ""}
+data = {"BASE_URL": "http://api.weatherapi.com/v1", "API_KEY": ""}
+
+saveData = {}
+#variables in save data include:
+#place, time/date saved
+#Looks like: "search1": {"Place": "Sydney", "Time": "2025-03-13 09:39:00"}
+
+keysFilePath = "keys.json"
+saveDataPath = "saveData.json"
 
 defaultList = ["Get Weather From Place", "Get Local Weather", "Other..."]
 
+
+#Attempt to load files, if none then it will create them
+try:
+    with open(keysFilePath, "x") as file:
+        json.dump(data, file)
+    print(f"File '{keysFilePath}' created successfully.")
+except FileExistsError:
+    print(f"File '{keysFilePath}' loaded.")
+
+try:
+    with open(saveDataPath, "x") as file:
+        json.dump(data, file)
+    print(f"File '{saveDataPath}' created successfully.")
+except FileExistsError:
+    print(f"File '{saveDataPath}' loaded.")
+
 def Set_Info():
-    with open("data.json", "r") as fp:
-        data = json.load(fp)
+    global data
+    
+    with open(keysFilePath, "r") as file:
+        data = json.load(file)
 
     if data["BASE_URL"] == "":
         print("!-----No Base Url-----!")
@@ -23,16 +50,16 @@ def Set_Info():
         data["API_KEY"] = key
 
     # Write the dictionary to a JSON file
-    with open("data.json", "w") as fp:
-        json.dump(data, fp)
+    with open(keysFilePath, "w") as file:
+        json.dump(data, file)
 
     return
 
 def Clear_Info():
     data = {"BASE_URL": "", "API_KEY": ""}
 
-    with open("data.json", "w") as fp:
-        json.dump(data, fp)
+    with open(keysFilePath, "w") as file:
+        json.dump(data, file)
 
     print("Cleared data")
 
@@ -59,8 +86,23 @@ def Display_Weather(weather_data):
         print("Error retrieving weather data.")
 
 def Get_Weather(place):
-    with open("data.json", "r") as fp:
-        data = json.load(fp)
+    now = datetime.now()
+    formatted_string = now.strftime("%Y-%m-%d %H:%M:%S")
+
+    with open(saveDataPath, "r") as file:
+        saveData = json.load(file)
+
+    saveNumStr = f"Search{len(saveData) + 1}"
+
+    saveDictionary = {saveNumStr: {"Place": place, "Time": formatted_string}}
+
+    saveData.update(saveDictionary)
+
+    with open(saveDataPath, "w") as file:
+        json.dump(saveData, file)
+
+    with open(keysFilePath, "r") as file:
+        data = json.load(file)
 
     complete_url = f"{data["BASE_URL"]}/current.json?key={data["API_KEY"]}&q={place}"
 
@@ -74,8 +116,8 @@ def Get_Weather(place):
         return None
     
 def Get_Place_From_IP(IP):
-    with open("data.json", "r") as fp:
-        data = json.load(fp)
+    with open(keysFilePath, "r") as file:
+        data = json.load(file)
     
     place = ""
 
