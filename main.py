@@ -4,7 +4,7 @@ import sys
 import time
 from Functions import Set_Info, Clear_Info, Get_Weather, Get_Local_Weather, Display_Weather, Choose_Options, Get_local_IP #Get functions
 
-#Api key cc57d655a5444de890d222902262602
+#Api key cc57d655a5444de890d222902262602 #NO LONGER WORKS
 
 #Base url http://api.weatherapi.com/v1
 
