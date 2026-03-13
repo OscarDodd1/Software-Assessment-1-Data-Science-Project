@@ -3,7 +3,9 @@ import json
 import geocoder
 from datetime import datetime
 
-data = {"BASE_URL": "http://api.weatherapi.com/v1", "API_KEY": ""}
+baseURL = "http://api.weatherapi.com/v1"
+
+data = {"BASE_URL": baseURL, "API_KEY": ""}
 
 saveData = {}
 #variables in save data include:
