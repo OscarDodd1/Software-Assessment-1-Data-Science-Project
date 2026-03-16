@@ -1,8 +1,9 @@
 #!!!!! IMPORTANT: Use | pip install -r requirements.txt | to install all dependancies
 
-import sys
-import time
-from Functions import Set_Info, Clear_Info, Get_Weather, Get_Local_Weather, Display_Weather, Choose_Options, Get_local_IP #Get functions
+import sys #Import system for exiting program
+import time #Import time to get the time
+from Functions import Set_Info, Clear_Info, Get_Weather, Get_Local_Weather, Display_Weather, Choose_Options, Get_local_IP, Show_Recent_Searches, Clear_Recent_Searches 
+#Get functions from Functions.py
 
 #Api key cc57d655a5444de890d222902262602 #NO LONGER WORKS
 
@@ -13,9 +14,9 @@ Set_Info()
 
 #Main Loop
 while True:
-    option = Choose_Options(None)
+    option = Choose_Options(None) #User choice
 
-    print("") #Go to another line
+    print("") #Go to another lineaasazazz
 
     if option == 1:
         place = input("Place to get weather from: ")
@@ -23,19 +24,23 @@ while True:
     elif option == 2:
         Display_Weather(Get_Local_Weather())
     elif option == 3:
-        option2 = Choose_Options(["Set Info", "Clear Info", "Get IP", "Exit Program"])
+        Show_Recent_Searches()
+    elif option == 4:
+        option2 = Choose_Options(["Set Info (Checks key data)", "Clear Key Data", "Clear Recent Searches", "Get IP", "Exit Program"])
         if option2 == 1:
             Set_Info()
         elif option2 == 2:
             Clear_Info()
         elif option2 == 3:
+            Clear_Recent_Searches()
+        elif option2 == 4:
             ip = Get_local_IP()
 
             if not ip:
                 print("IP not found")
             else:
                 print(ip)
-        elif option2 == 4:
+        elif option2 == 5:
             print("\n---Exiting program---")
             sys.exit()
 
