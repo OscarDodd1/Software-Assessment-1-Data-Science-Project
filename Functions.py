@@ -19,7 +19,6 @@ saveDataPath = "saveData.json"
 #default for the choose_option funciton
 defaultList = ["Get Weather From Place", "Get Local Weather", "Show Recent Searches", "Other..."]
 
-
 #Attempt to load files, if none then it will create them
 try:
     with open(keysFilePath, "x") as file:
