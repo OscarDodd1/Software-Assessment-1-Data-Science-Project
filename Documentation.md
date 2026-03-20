@@ -10,4 +10,31 @@
 
 ### **Non-Functional Specifications**
 
-#### **Performance**:
+#### **Performance**: The program should be able to efficiently peform tasks with minimal delay. The data should be recieved from the api relatively quickly and if it cant connect within a reasonable time, it should timeout and inform the user to maintain their engagement.
+#### **Useability/Accessibility**: The program could be more accesible with a proper user interface with elements like buttons and graphs instead of just using the command line, which would greatly improve useability and readability for the user.
+#### **Reliability**: The program may have issues with the receiving data from the api, as the user may not be connected to the internet or the user inputs something the api cannot interperate.
+
+### **Use Cases**
+
+### **Main**
+#### **Actor**: User
+#### **Preconditions**: Internet access; Weather api availiable, and baseurl + api key
+#### **1 - Search location**
+- User inputs a location (e.g. Sydney), the sytem retrives the data from the api and outputs it as readable data to the user, the data is then saved in a file.
+#### **2 - Show recent seaches**
+- A list of recent weather searches is outputed to the user which displays the location, time and temperature at the time of the search.
+#### **3 - Clear recent searches**
+- Clears all of the users recent searches from the save file.
+#### **4 - Help**
+- Displays helpful information to the user on how to use the program.
+#### **Postconditions**: Weather data retrieved, search data is saved/removed, or information is displayed successfully.
+
+## **Design**
+
+### **Gantt Chart**
+
+### **Structure Chart**
+
+### **Algoriths**
+
+### **Data Dictionary**

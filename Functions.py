@@ -19,24 +19,24 @@ saveDataPath = "saveData.json"
 #default for the choose_option funciton
 defaultList = ["Get Weather From Place", "Get Local Weather", "Show Recent Searches", "Help", "Other..."]
 
-#Attempt to load files, if none then it will create them
-try:
-    with open(keysFilePath, "x") as file:
-        json.dump(data, file)
-    print(f"File '{keysFilePath}' created successfully.")
-except FileExistsError:
-    print(f"File '{keysFilePath}' loaded.")
-
-try:
-    with open(saveDataPath, "x") as file:
-        json.dump(saveData, file)
-    print(f"File '{saveDataPath}' created successfully.")
-except FileExistsError:
-    print(f"File '{saveDataPath}' loaded.")
-
 def Set_Info():
     global data
     global saveData
+
+    #Attempt to load files, if none then it will create them
+    try:
+        with open(keysFilePath, "x") as file:
+            json.dump(data, file)
+        print(f"File '{keysFilePath}' created successfully.")
+    except FileExistsError:
+        print(f"File '{keysFilePath}' loaded.")
+
+    try:
+        with open(saveDataPath, "x") as file:
+            json.dump(saveData, file)
+        print(f"File '{saveDataPath}' created successfully.")
+    except FileExistsError:
+        print(f"File '{saveDataPath}' loaded.")
     
     #read the files
     with open(keysFilePath, "r") as file:
