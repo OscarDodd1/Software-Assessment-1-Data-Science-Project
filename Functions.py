@@ -17,7 +17,7 @@ keysFilePath = "keys.json"
 saveDataPath = "saveData.json"
 
 #default for the choose_option funciton
-defaultList = ["Get Weather From Place", "Get Local Weather", "Show Recent Searches", "Other..."]
+defaultList = ["Get Weather From Place", "Get Local Weather", "Show Recent Searches", "Help", "Other..."]
 
 #Attempt to load files, if none then it will create them
 try:
@@ -257,3 +257,8 @@ def Clear_Recent_Searches(): #Clears all the data from the saveData.json file
         saveData = json.load(file)
 
     print("---Cleared Recent Searches---") #User feedback
+
+def Help():
+    print("\n-------------[Help]-------------")
+    print("Type a number to select a function to run.")
+    print("--------------------------------")

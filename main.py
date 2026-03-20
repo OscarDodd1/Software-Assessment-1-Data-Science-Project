@@ -2,7 +2,7 @@
 
 import sys #Import system for exiting program
 import time #Import time to get the time
-from Functions import Set_Info, Clear_Info, Get_Weather, Get_Local_Weather, Display_Weather, Choose_Options, Get_local_IP, Show_Recent_Searches, Clear_Recent_Searches 
+from Functions import Set_Info, Clear_Info, Get_Weather, Get_Local_Weather, Display_Weather, Choose_Options, Get_local_IP, Show_Recent_Searches, Clear_Recent_Searches, Help 
 #Get functions from Functions.py
 
 #Api key cc57d655a5444de890d222902262602 #NO LONGER WORKS
@@ -26,6 +26,8 @@ while True:
     elif option == 3:
         Show_Recent_Searches()
     elif option == 4:
+        Help()
+    elif option == 5:
         option2 = Choose_Options(["Set Info (Checks key data)", "Clear Key Data", "Clear Recent Searches", "Get IP", "Exit Program"])
         if option2 == 1:
             Set_Info()
