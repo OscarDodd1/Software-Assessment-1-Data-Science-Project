@@ -37,5 +37,47 @@
 ### **Structure Chart**
 
 ### **Algoriths**
+#### **Flowchart of the whole program**
+![Program Flowchart](Images\ProgramFlowchart.png "Program Flowchart")
+
+#### **Main Routine**
+#### Pseudocode
+    BEGIN main()
+        WHILE True
+            option = ""
+            INPUT option
+            IF option is 1 THEN
+                place = ""
+                INPUT place
+                Get_Weather(place) 
+            ELIF option is 2 THEN
+                Get_Local_Weather()
+            ELIF option is 3 THEN
+                Show_Recent_Searches()
+            ELIF option is 4 THEN
+                Help()
+            ELIF option is 5 THEN
+                option2 = ""
+                INPUT option2
+                IF option2 is 1 THEN
+                    Set_Info()
+                ELIF option2 is 2 THEN
+                    Clear_Info()
+                ELIF option2 is 3 THEN
+                    Clear_Recent_Searches()
+                ELIF option2 is 4 THEN
+                    ip = Get_local_IP()
+
+                    IF no ip THEN
+                        DISPLAY "IP not found"
+                    ELSE
+                        DISPLAY ip
+                ELIF option2 is 5 THEN
+                    DISPLAY "Exiting program"
+                    END PROGRAM
+        ENDWHILE
+    END main()
+
+#### Flowchart
 
 ### **Data Dictionary**
