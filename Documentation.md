@@ -32,6 +32,7 @@
 ## **Design**
 
 ### **Gantt Chart**
+![Gantt Chart](Images\GanttChart.png "Gantt Chart")
 
 ### **Structure Chart**
 

@@ -14,7 +14,7 @@ def main():
     while True:
         option = Choose_Options(None) #User choice
 
-        print("") #Go to another lineaasazazz
+        print("") #Go to another line
 
         if option == 1:
             place = input("Place to get weather from: ")
