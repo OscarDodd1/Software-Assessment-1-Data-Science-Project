@@ -12,7 +12,7 @@ from Functions import Set_Info, Clear_Info, Get_Weather, Get_Local_Weather, Disp
 #Main Loop
 def main():
     while True:
-        option = Choose_Options(None) #User choice
+        option = Choose_Options(0, None) #User choice
 
         print("") #Go to another line
 
@@ -26,7 +26,7 @@ def main():
         elif option == 4:
             Help()
         elif option == 5:
-            option2 = Choose_Options(["Set Info (Checks key data)", "Clear Key Data", "Clear Recent Searches", "Get IP", "Exit Program"])
+            option2 = Choose_Options(0, ["Set Info (Checks key data)", "Clear Key Data", "Clear Recent Searches", "Get IP", "Exit Program"])
             if option2 == 1:
                 Set_Info()
             elif option2 == 2:

@@ -192,11 +192,14 @@ def Get_Local_Weather(): #Gets the weather at the users location
 
     return Get_Weather(place) #return the weather from the place
 
-def Choose_Options(optionsList):
+def Choose_Options(charlen, optionsList):
     #Most of this code makes the options list look nice
     #All it does is check if the option string is longer than the max character length, if it is, it will shorten it
 
-    characterLength = 38
+    if charlen == 0:
+        characterLength = 38
+    else:
+        characterLength = charlen
 
     if optionsList == None:
         optionsList = defaultList
@@ -259,6 +262,7 @@ def Clear_Recent_Searches(): #Clears all the data from the saveData.json file
     print("---Cleared Recent Searches---") #User feedback
 
 def Help():
-    print("\n-------------[Help]-------------")
-    print("Type a number to select a function to run.")
-    print("--------------------------------")
+    print("\nWhat do you need help with?")
+    choice = Choose_Options(50, ["How do I navigate through the program?"])
+    if choice == 1:
+        print("\nTo navigate through the program, type in a number to select and run an option.")
