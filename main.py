@@ -2,7 +2,7 @@
 
 import sys #Import system for exiting program
 import time #Import time to get the time
-from Functions import Set_Info, Clear_Info, Get_Weather, Get_Local_Weather, Display_Weather, Choose_Options, Get_local_IP, Show_Recent_Searches, Clear_Recent_Searches, Help 
+from Functions import * 
 #Get functions from Functions.py
 
 #Api key cc57d655a5444de890d222902262602 #NO LONGER WORKS
@@ -26,7 +26,7 @@ def main():
         elif option == 4:
             Help()
         elif option == 5:
-            option2 = Choose_Options(0, ["Set Info (Checks key data)", "Clear Key Data", "Clear Recent Searches", "Get IP", "Exit Program"])
+            option2 = Choose_Options(0, ["Set Info (Checks key data)", "Clear Key Data", "Clear Recent Searches", "Get IP", "Exit Program", "Back..."])
             if option2 == 1:
                 Set_Info()
             elif option2 == 2:
@@ -43,6 +43,8 @@ def main():
             elif option2 == 5:
                 print("\n---Exiting program---")
                 sys.exit()
+            elif option2 == 5:
+                continue
 
         time.sleep(1)
 

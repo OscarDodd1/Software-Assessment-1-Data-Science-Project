@@ -196,7 +196,10 @@ def Choose_Options(charlen, optionsList):
 
     print(f"\n{lineString}")
 
+    totalOptions = 0
+
     for i, option in enumerate(optionsList):
+        totalOptions += 1
         changed = False
 
         fullString = f"| [{i + 1}] - {option}"
@@ -223,7 +226,12 @@ def Choose_Options(charlen, optionsList):
     while choice == None:
         try:
             choice = int(input("Choice: "))
+            
+            if choice < 1 or choice > totalOptions:
+                print(f"Invalid input, please input a number from 1-{totalOptions}")
+                choice = None
         except:
+            print(f"Invalid input, please input a number from 1-{totalOptions}")
             choice = None
     
     return choice

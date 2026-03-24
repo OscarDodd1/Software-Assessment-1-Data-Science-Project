@@ -195,3 +195,7 @@
 | saveData | dictionary | Place, Time/date saved, Temperature, Condition | a few bytes but increases in size as more data is saved | Not applicable | Used to save the users recent searches | "search1": {"Place": "Sydney", "Time": "2025-03-13 09:39:00", "Temperature": 24.2, "Condition": "Overcast"} |
 | place | string | Inputed string | a few bytes (depends on what the user inputs) | Not applicable | The place the user wants to view the data of | "Sydney" |
 | option | int | Inputed integer | a few bytes | 1 charachter most of the time | The users choice | 2 |
+
+## **Maintenence**
+
+## **Final Evaluation**
