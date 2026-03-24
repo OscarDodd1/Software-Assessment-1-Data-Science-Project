@@ -47,10 +47,7 @@ def Set_Info():
 
     #checks if the variables are empty, if they are it asks the user to set them
     if data["BASE_URL"] == "":
-        print("!-----No Base Url-----!")
-        url = input("Base url: ")
-
-        data["BASE_URL"] = url
+        data["BASE_URL"] = baseURL
 
     if data["API_KEY"] == "":
         print("!-----No Api key-----!")
@@ -64,8 +61,6 @@ def Set_Info():
 
     with open(saveDataPath, "w") as file:
         json.dump(saveData, file)
-
-    return
 
 def Clear_Info():
     #Clears the info in keys.json (this is here incase the user puts the wrong api key in and wants to change it without going into the files)
@@ -98,15 +93,31 @@ def Display_Weather(weather_data):
         # Print an error message if data could not be retrieved
         print("Error retrieving weather data.")
 
+def Save_Search(place, temp, condition):
+    with open(saveDataPath, "r") as file:
+        saveData = json.load(file)
+    
+    #gets the current time for data saving
+    now = datetime.now()
+    time = now.strftime("%Y-%m-%d %H:%M:%S")
+
+    saveNumStr = f"Search{len(saveData) + 1}"
+
+    saveDictionary = {saveNumStr: {"Place": place, "Time": time, "Temperature": temp, "Condition": condition}}
+
+    saveData.update(saveDictionary) #Updates the variable
+
+    with open(saveDataPath, "w") as file:
+        json.dump(saveData, file)
+
+    with open(saveDataPath, "r") as file:
+        saveData = json.load(file)
+
 def Get_Weather(place):
     global data
     global saveData
 
     complete_url = f"{data["BASE_URL"]}/current.json?key={data["API_KEY"]}&q={place}"
-
-    #gets the current time for data saving
-    now = datetime.now()
-    formatted_string = now.strftime("%Y-%m-%d %H:%M:%S")
 
     response = ""
 
@@ -117,39 +128,13 @@ def Get_Weather(place):
 
     if response.status_code == 200:
         #Save the data
-        with open(saveDataPath, "r") as file:
-            saveData = json.load(file)
-
-        saveNumStr = f"Search{len(saveData) + 1}"
-
-        saveDictionary = {saveNumStr: {"Place": place, "Time": formatted_string, "Temperature": response.json()["current"]["temp_c"], "Condition": response.json()["current"]["condition"]["text"]}}
-
-        saveData.update(saveDictionary) #Updates the variable
-
-        with open(saveDataPath, "w") as file:
-            json.dump(saveData, file)
-
-        with open(saveDataPath, "r") as file:
-            saveData = json.load(file)
+        Save_Search(place, response.json()["current"]["temp_c"], response.json()["current"]["condition"]["text"])
 
         # Return the JSON response as a Python dictionary
         return response.json()
     else:
         #Save but with different information since there is no data
-        with open(saveDataPath, "r") as file:
-            saveData = json.load(file)
-
-        saveNumStr = f"Search{len(saveData) + 1}"
-
-        saveDictionary = {saveNumStr: {"Place": place, "Time": formatted_string, "Temperature": "No Data", "Condition": "No Data"}}
-
-        saveData.update(saveDictionary) #Updates the variable
-
-        with open(saveDataPath, "w") as file:
-            json.dump(saveData, file)
-
-        with open(saveDataPath, "r") as file:
-            saveData = json.load(file)
+        Save_Search(place, "No Data", "No Data")
 
         # Return None if there was an error with the request
         return None
@@ -263,6 +248,12 @@ def Clear_Recent_Searches(): #Clears all the data from the saveData.json file
 
 def Help():
     print("\nWhat do you need help with?")
-    choice = Choose_Options(50, ["How do I navigate through the program?"])
+    choice = Choose_Options(55, ["How do I navigate through the program?", "How do I view weather data from a place?", "How do I change the api key?", "How do I exit the program?"])
     if choice == 1:
         print("\nTo navigate through the program, type in a number to select and run an option.")
+    elif choice == 2:
+        print("\nSelect 'Get Weather From Place' and type in the desired location and press enter.")
+    elif choice == 3:
+        print("\nNavigate to the 'other' page and select 'Clear Key Data', then enter the new api key.")
+    elif choice == 4:
+        print("\nNavigate to the 'other' page and select exit program.")
