@@ -7,7 +7,7 @@ pip install -r requirements.txt
 
 ### **Features**
 #### -Get weather data from any location, or get weather data from your local location. The weather data includes temperature and condition.
-#### -Saves users weather searches
+#### -Saves users weather searches and can be viewed
 
 ### **How to use**
 #### 1 - Install all of the dependencies by running the code above in the command line
