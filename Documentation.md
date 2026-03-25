@@ -35,6 +35,7 @@
 ![Gantt Chart](Images\GanttChart.png "Gantt Chart")
 
 ### **Structure Chart**
+![Structure Chart](Images\StructureChart.png "Structure Chart")
 
 ### **Algoriths**
 #### **Flowchart of the whole program**
@@ -196,6 +197,10 @@
 | place | string | Inputed string | a few bytes (depends on what the user inputs) | Not applicable | The place the user wants to view the data of | "Sydney" |
 | option | int | Inputed integer | a few bytes | 1 charachter most of the time | The users choice | 2 |
 
+## **Development**
+
 ## **Maintenence**
+### **1 - Explain how you would handle issues caused by changes to the weather API over time**
+#### 
 
 ## **Final Evaluation**
