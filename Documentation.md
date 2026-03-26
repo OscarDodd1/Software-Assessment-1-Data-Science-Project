@@ -222,6 +222,11 @@
 ### **4 - Outline how you would maintain clear documentation and ensure the program remains easy to update in the future**
 #### I would keep version numbers in the documentation to ensure the user knows if they need to update to a newer release. Version numbers would look like this: "v1.3 Hotfix 2" or "v0.8 Prerelease" to ensure the user knows what kind of changes were made in each version.
 
+## **Peer Evaluation**
+#### **Marlon**
+#### **Plus**: Simple to navigate, text formatted nicely. 
+#### **Minus**: Took a while to work out what the 'other' function was, and simple spelling mistakes like 'lobdon' wouldn't work.
+
 ## **Final Evaluation**
 ### **1 - Evaluate the current functionality of the program in terms of how well it addresses the functional and non-functional requirements**
 #### Most of my functional and non functional requirements have been implemented in my program including viewing the weather in any location, search saving, error handling and user misinputs. One of my non functional requirements, gui like buttons and graphs, was not implented as there was no need for it since the data was too basic only having the temperature and condition, if i implemented a forecast system then graphs would be necessary.
