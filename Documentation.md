@@ -198,9 +198,36 @@
 | option | int | Inputed integer | a few bytes | 1 charachter most of the time | The users choice | 2 |
 
 ## **Development**
+#### My user interface is command line based, it shows data and information through print function and takes inputs with the input function. This ui is simple and understandable for all users and doesnt use any complicated gui elements that may not be understandandable for some users.
+
+### **Main Menu**
+![Main Menu](Images\MainMenu.png "Main Menu")
+
+### **Data**
+![Data](Images\Data.png "Data")
+
+### **Help menu**
+![Help Menu](Images\HelpMenu.png "Help Menu")
 
 ## **Maintenence**
 ### **1 - Explain how you would handle issues caused by changes to the weather API over time**
-#### 
+#### Changes to the API would heavily impact the software as the data recieved could be different to how it is programed to be recieved, this would result in errors and break the software. The API may release updates and the url could change, this could be handled with try/except and stop any errors from breaking the code. The only problem with this is that the program wouldnt be able to interperate the data after the API changes, it only stops any errors.
+
+### **2 - Explain how you would ensure the program remains compatible with new versions of Python and libraries like requests and matplotlib**
+#### The program will remain compatable with python libraries as the requirements.txt saves the version number and installs that when the user installs all of the dependencies. The deprecation of older python libraries can be handled by simply updating the program to use newer versions to ensure it stays working.
+
+### **3 - Describe the steps you would take to fix a bug found in the program after deployment**
+#### If a bug was found in the program after deployment, I would try and see the severity of the bug and try to reproduce it to see how much it affects the programs integrity. If the bug is severe, an immediate fix and deployment would occur, then the program would be monitored to see if the issue of any related issues persist.
+
+### **4 - Outline how you would maintain clear documentation and ensure the program remains easy to update in the future**
+#### I would keep version numbers in the documentation to ensure the user knows if they need to update to a newer release. Version numbers would look like this: "v1.3 Hotfix 2" or "v0.8 Prerelease" to ensure the user knows what kind of changes were made in each version.
 
 ## **Final Evaluation**
+### **1 - Evaluate the current functionality of the program in terms of how well it addresses the functional and non-functional requirements**
+#### Most of my functional and non functional requirements have been implemented in my program including viewing the weather in any location, search saving, error handling and user misinputs. One of my non functional requirements, gui like buttons and graphs, was not implented as there was no need for it since the data was too basic only having the temperature and condition, if i implemented a forecast system then graphs would be necessary.
+
+### **2 - Discuss areas for improvement or new features that could be added**
+#### Some features that could be added include forcasts and graphs which would make the data more interesting and useful. This could have been implemented if I had more time.
+
+### **3 - Evaluate how the project was managed throughout its development and maintenance, including your time management and how challenges were addressed during the software development lifecycle**
+#### My project was managed fairly well as I had enough time to implement some extra features like local weather fetching. I had started off with the code, working on the basic functions and adding on more advanced functions. Some challanges I faced included small errors that remained unnoticed, but most or all were eventually fixed.
