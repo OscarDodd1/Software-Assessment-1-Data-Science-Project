@@ -154,7 +154,7 @@
 ![Set_Info Flowchart](Images\Set_InfoFlowchart.png "Set_Info Flowchart")
 
 ### **Data Dictionary**
-#### Everthing up to pollen in the table is from the weather api website (https://www.weatherapi.com/docs/#), Number of charactes is mostly not applicable as it can be different sizes.
+#### Everthing up to pollen (all of them have a dash in most of the columns) in the table is from the weather api website (https://www.weatherapi.com/docs/#), Number of characters is mostly not applicable as it can be different sizes.
 | Variable Name       | Data Type| Format | Size         | Number of characters      | Purpose | Example |
 |---------------------|----------|--------|--------------|---------------------------|---------|---------|
 | last_updated        | string   | -      | -            | -                         | -       | -       |
