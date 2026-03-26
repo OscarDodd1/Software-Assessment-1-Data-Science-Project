@@ -94,6 +94,8 @@ def Display_Weather(weather_data):
         print("Error retrieving weather data.")
 
 def Save_Search(place, temp, condition):
+    global saveData
+    
     with open(saveDataPath, "r") as file:
         saveData = json.load(file)
     
