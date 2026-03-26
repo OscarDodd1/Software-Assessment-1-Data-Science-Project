@@ -227,6 +227,11 @@
 #### **Plus**: Simple to navigate, text formatted nicely. 
 #### **Minus**: Took a while to work out what the 'other' function was, and simple spelling mistakes like 'lobdon' wouldn't work.
 
+## **Peer Evaluation**
+#### **Leroy**
+#### **Plus**: Lots of options to choose from, Gets IP to give information on your city easily
+#### **Minus**: Only able to view weather and temperature.
+
 ## **Final Evaluation**
 ### **1 - Evaluate the current functionality of the program in terms of how well it addresses the functional and non-functional requirements**
 #### Most of my functional and non functional requirements have been implemented in my program including viewing the weather in any location, search saving, error handling and user misinputs. One of my non functional requirements, gui like buttons and graphs, was not implented as there was no need for it since the data was too basic only having the temperature and condition, if i implemented a forecast system then graphs would be necessary.
