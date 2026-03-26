@@ -191,7 +191,7 @@
 | dni                 | decimal  | -      | -            | -                         | -       | -       |
 | gti                 | decimal  | -      | -            | -                         | -       | -       |
 | pollen              | element  | -      | -            | -                         | -       | -       |
-| BASE_URL            | string   | URL    | a few bytes  | Not applicable     | Used in api requests as the base for the full url | "http://api.weatherapi.com/v1" |
+| BASE_URL            | string   | URL    | a few bytes  | 27 unless the url changes     | Used in api requests as the base for the full url | "http://api.weatherapi.com/v1" |
 | API_KEY             | string   | alphanumeric string | a few bytes | Not applicable | Used in api requests as they key | "fdjknsjk24ntnjkgjvfdj" |
 | saveData | dictionary | Place, Time/date saved, Temperature, Condition | a few bytes but increases in size as more data is saved | Not applicable | Used to save the users recent searches | "search1": {"Place": "Sydney", "Time": "2025-03-13 09:39:00", "Temperature": 24.2, "Condition": "Overcast"} |
 | place | string | Inputed string | a few bytes (depends on what the user inputs) | Not applicable | The place the user wants to view the data of | "Sydney" |
